@@ -2,7 +2,7 @@
 //const findButton = document.getElementById("find-button");
 //findButton.addEventListener("click", locatateDino)
 const searchBar = document.getElementById("search")
-searchBar.addEventListener('input', locatateDinos)
+searchBar.addEventListener('input', locateDinos)
 
 const message = document.getElementById('message')
 
@@ -71,21 +71,44 @@ const dinos = [
         name: "raptor",
         taming: "Bolas it, knock unconcious with bat, give taming food",
         food: "raw prime meat, raw meat"
-    }]
+    },
+    {
+        name: "pachy",
+        taming: "Bolas it, knock unconcious with bat, give taming food",
+        food: "berries"
+    }
+]
+let newDinos = []
 
+function locateDinos () {
+    let userInput = document.getElementById('search').value.toLowerCase();
+    dinos.map(function newDinoList (dino) {
+        if (dino.name.startsWith(userInput)) {
+            newDinos.push(dino)
+        }
+    })
+    console.log(newDinos)
+}
+
+
+
+
+
+
+/*
 function locatateDinos () {
     let userInput = document.getElementById('search').value.toLowerCase();
-    document.getElementById('message').innerText = ("Congratulations you are a winner.")
     dinos.filter((dino) => {
         if (dino.name.startsWith(userInput)) {
             let dinosaur = dino.name;
             console.log(dinosaur)
+            document.getElementById('message').innerText = dinosaur
         }
-    })
-    //console.log(filteredItems)
+    }
+    )
 } 
 
-/*
+
 const searchBar = document.getElementById("search")
 searchBar.addEventListener('input', (e) => {
     const value = e.target.value
