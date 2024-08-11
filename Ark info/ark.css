@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3rem;
+}
+input {
+    border-radius:  2.5em;
+}
+.body div {
+    display: none;
+}
