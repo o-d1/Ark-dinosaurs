@@ -1,4 +1,3 @@
-
 //const findButton = document.getElementById("find-button");
 //findButton.addEventListener("click", locatateDino)
 const searchBar = document.getElementById("search")
@@ -78,16 +77,35 @@ const dinos = [
         food: "berries"
     }
 ]
-let newDinos = []
+/* let newDinos = []
 
 function locateDinos () {
     let userInput = document.getElementById('search').value.toLowerCase();
+    let newDinosName;
+    // Adds to a new array with items that start with same letter(s) as the users input
     dinos.map(function newDinoList (dino) {
         if (dino.name.startsWith(userInput)) {
             newDinos.push(dino)
+            newDinosName = dino.name
+        }
+        setTimeout (() => {
+            newDinos = []
+        }, 1)
+    })
+    console.log(newDinosName)
+} */
+
+
+function locateDinos () {
+    let userInput = document.getElementById('search').value.toLowerCase();
+    dinos.forEach((dino) => {
+        if (dino.name.startsWith(userInput)) {
+            let dinoNames = dino.name
+            let dinoTaming = dino.taming
+            let dinoFood = dino.food
+            console.log(` Name: ${dinoNames} \n Taming: ${dinoTaming} \n Food: ${dinoFood}`)
         }
     })
-    console.log(newDinos)
 }
 
 
