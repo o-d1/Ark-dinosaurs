@@ -99,13 +99,13 @@ function locateDinos () {
     const dinoListDiv = document.getElementById('message');
     dinos.forEach((dino) => { // Goes througth each array and check if the name is the same as the user.
         if (dino.name.startsWith(userInput)) {
-            let dinoNames = dino.name;
-            let dinoTaming = dino.taming;
-            let dinoFood = dino.food;
             const dinoElement = document.createElement('p'); // Creates a new p element in the html and then the content below is then added to it..
-            dinoElement.textContent = (` Name: ${dinoNames} --- Taming: ${dinoTaming} --- Food: ${dinoFood} `);
+            dinoElement.textContent = (` Name: ${dino.name} --- Taming: ${dino.taming} --- Food: ${dino.food} `);
             dinoListDiv.appendChild(dinoElement); // [LEARN!!!!!!!!!!]
-            console.log(` Name: ${dinoNames} \n Taming: ${dinoTaming} \n Food: ${dinoFood}`);
+            //console.log(` Name: ${dinoNames} \n Taming: ${dinoTaming} \n Food: ${dinoFood}`);
+        } 
+        if (userInput !== userInput) {
+            dinoElement.remove()
         } 
     })
 }
