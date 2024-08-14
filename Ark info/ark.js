@@ -75,76 +75,70 @@ const dinos = [
         food: "berries"
     }
 ]
-/* let newDinos = []
+
+/* let newDinos;
 
 function locateDinos () {
-    let userInput = document.getElementById('search').value.toLowerCase();
-    let newDinosName;
-    // Adds to a new array with items that start with same letter(s) as the users input
-    dinos.map(function newDinoList (dino) {
-        if (dino.name.startsWith(userInput)) {
-            newDinos.push(dino)
-            newDinosName = dino.name
-        }
-        setTimeout (() => {
-            newDinos = []
-        }, 1)
-    })
-    console.log(newDinosName)
-} */
 
-
-function locateDinos () {
     let userInput = document.getElementById('search').value.toLowerCase();
+
+    newDinos = []
+
     const dinoListDiv = document.getElementById('message');
+
+    dinos.map(function newDinoList (dino) {
+
+        if (dino.name.startsWith(userInput)) {
+
+            newDinos.push(dino.name)
+            newDinos.push(dino.taming)
+            newDinos.push(dino.food)
+
+            const dinoElement = document.createElement('p');
+
+            dinoElement.textContent = (`dinos are : ${newDinos}`);
+            dinoListDiv.appendChild(dinoElement); 
+            dinoListDiv.value = (`Dinos are ${newDinos}`)
+        }
+    })
+    console.log(`Dinos are: \n ${newDinos.name} \n ${newDinos.taming} \n ${newDinos.food}`)
+}  */
+
+
+function locateDinos () {
+    let newDinos = []
+    let userInput = document.getElementById('search').value.toLowerCase();
+    //const dinoListDiv = document.getElementById('message');
     dinos.forEach((dino) => { // Goes througth each array and check if the name is the same as the user.
         if (dino.name.startsWith(userInput)) {
-            const dinoElement = document.createElement('p'); // Creates a new p element in the html and then the content below is then added to it..
-            dinoElement.textContent = (` Name: ${dino.name} --- Taming: ${dino.taming} --- Food: ${dino.food} `);
-            dinoListDiv.appendChild(dinoElement); // [LEARN!!!!!!!!!!]
-            //console.log(` Name: ${dinoNames} \n Taming: ${dinoTaming} \n Food: ${dinoFood}`);
-        } 
-        if (userInput !== userInput) {
-            dinoElement.remove()
-        } 
-    })
-}
-
-
-/* const animals = ['Tyrannosaurus Rex', 'Velociraptor', 'Triceratops', 'Stegosaurus'];
-
-const animalListDiv = document.getElementById('animalList');
-
-animals.forEach(animal => {
-    const animalElement = document.createElement('p');
-    animalElement.textContent = animal;
-    animalListDiv.appendChild(animalElement); // Append to the div, not overwrite
-});  */
-
-
-
-/*
-function locatateDinos () {
-    let userInput = document.getElementById('search').value.toLowerCase();
-    dinos.filter((dino) => {
-        if (dino.name.startsWith(userInput)) {
-            let dinosaur = dino.name;
-            console.log(dinosaur)
-            document.getElementById('message').innerText = dinosaur
+            newDinos.push(dino.name)
         }
-    }
-    )
-} 
-
-
-const searchBar = document.getElementById("search")
-searchBar.addEventListener('input', (e) => {
-    const value = e.target.value
-    console.log(value)
-    return 
-})
-
-function findDinos () {
-    
+    })
+    console.log(newDinos)
+    newDinos.forEach( (name) => {
+        let newElement = document.createElement('p');
+        newElement.textContent = name;  // You can also use innerHTML here
+        message.appendChild(newElement); 
+    }); 
+    newElement.remove('p')
 }
-*/
+
+
+
+
+
+/* names.forEach(name => {
+    const nameElement = document.createElement('p');
+    nameElement.textContent = name;  // You can also use innerHTML here
+    nameList.appendChild(nameElement);
+}); */
+
+
+
+/* const dinoElement = document.createElement('p'); // Creates a new p element in the html and then the content below is then added to it..
+dinoElement.textContent = (` Name: ${dino.name} --- Taming: ${dino.taming} --- Food: ${dino.food} `);
+dinoListDiv.appendChild(dinoElement); // [LEARN!!!!!!!!!!]
+console.log(` Name: ${dinoNames} \n Taming: ${dinoTaming} \n Food: ${dinoFood}`);
+newDinos.push(dino.name)
+newDinos.push(dino.taming)
+newDinos.push(dino.food) */
