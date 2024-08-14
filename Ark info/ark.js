@@ -1,7 +1,7 @@
 const searchBar = document.getElementById("search");
 searchBar.addEventListener('input', locateDinos);
 
-const message = document.getElementById('message');
+const objectElement = document.getElementById('message');
 
 const dinos = [
     {
@@ -103,24 +103,55 @@ function locateDinos () {
     })
     console.log(`Dinos are: \n ${newDinos.name} \n ${newDinos.taming} \n ${newDinos.food}`)
 }  */
+    const array = [
+        { name: 'Alice', age: 25, occupation: 'Engineer' },
+        { name: 'Bob', age: 30, occupation: 'Designer' },
+        { name: 'Charlie', age: 35, occupation: 'Manager' }
+    ];
 
 
 function locateDinos () {
+/* 
+    console.log(message)
+    
+
     let newDinos = []
     let userInput = document.getElementById('search').value.toLowerCase();
-    //const dinoListDiv = document.getElementById('message');
-    dinos.forEach((dino) => { // Goes througth each array and check if the name is the same as the user.
+    let newElement;
+
+    
+    dinos.forEach((dino) => {                                  // Goes througth each array and check if the name is the same as the user.
         if (dino.name.startsWith(userInput)) {
-            newDinos.push(dino.name)
+            newDinos.push(dino)
         }
+
     })
     console.log(newDinos)
+
     newDinos.forEach( (name) => {
-        let newElement = document.createElement('p');
-        newElement.textContent = name;  // You can also use innerHTML here
+        newElement = document.createElement('p');
+        newElement.textContent = name;
         message.appendChild(newElement); 
-    }); 
-    newElement.remove('p')
+    }); */
+
+
+
+    // Select the div where the attributes will be displayed
+
+    // Loop through each object in the array
+    dinos.forEach(obj => {
+        const element = document.createElement('div');
+        
+        // Loop through each key in the object
+        Object.keys(obj).forEach(key => {
+            const newElement = document.createElement('p');
+            newElement.textContent = `${key}: ${obj[key]}`;
+            element.appendChild(newElement);
+        });
+
+        // Append each object's attributes to the div
+        message.appendChild(element);
+    });
 }
 
 
