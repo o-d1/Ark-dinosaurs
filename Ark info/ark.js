@@ -111,8 +111,8 @@ function locateDinos () {
 
 
 function locateDinos () {
-/* 
-    console.log(message)
+
+    //console.log(message)
     
 
     let newDinos = []
@@ -122,7 +122,7 @@ function locateDinos () {
     
     dinos.forEach((dino) => {                                  // Goes througth each array and check if the name is the same as the user.
         if (dino.name.startsWith(userInput)) {
-            newDinos.push(dino)
+            newDinos.push(dino.name)
         }
 
     })
@@ -132,11 +132,11 @@ function locateDinos () {
         newElement = document.createElement('p');
         newElement.textContent = name;
         message.appendChild(newElement); 
-    }); */
+    }); 
 
 
 
-    // Select the div where the attributes will be displayed
+/*     // Select the div where the attributes will be displayed
 
     // Loop through each object in the array
     dinos.forEach(obj => {
@@ -151,7 +151,7 @@ function locateDinos () {
 
         // Append each object's attributes to the div
         message.appendChild(element);
-    });
+    }); */
 }
 
 
